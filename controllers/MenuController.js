@@ -9,6 +9,7 @@ module.exports = class MenuController {
                 message: "Please choose from an option below: ",
                 choices: [
                     "Add new contact",
+                    "Date",
                     "Exit"
                 ]
             }
@@ -19,20 +20,23 @@ module.exports = class MenuController {
     main() {
         console.log('Welcome to AddressBloc!');
         inquirer.prompt(this.mainMenuQuestions).then((response) => {
-            switch(response.mainMenuChoice){
+            switch (response.mainMenuChoice) {
                 case "Add new contact":
-                this.addContact();
-                break;
+                    this.addContact();
+                    break;
+                case "Date":
+                    this.getDate();
+                    break;
                 case "Exit":
-                this.exit();
+                    this.exit();
                 default:
-                console.log("Invalid input");
-                this.main();
+                    console.log("Invalid input");
+                    this.main();
             }
         })
-        .catch((err) => {
-            console.log(err);
-        });
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     clear() {
@@ -49,4 +53,14 @@ module.exports = class MenuController {
         console.log('Thanks for using AddressBloc!');
         process.exit();
     }
+
+    getDate() {
+        this.clear();
+        const date = new Date();
+        console.log(date);
+        this.main();
+    }
+
+
+
 }
