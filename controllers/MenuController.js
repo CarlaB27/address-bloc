@@ -19,20 +19,20 @@ module.exports = class MenuController {
     main() {
         console.log('Welcome to AddressBloc!');
         inquirer.prompt(this.mainMenuQuestions).then((response) => {
-            switch(response.mainMenuChoice){
+            switch (response.mainMenuChoice) {
                 case "Add new contact":
-                this.addContact();
-                break;
+                    this.addContact();
+                    break;
                 case "Exit":
-                this.exit();
+                    this.exit();
                 default:
-                console.log("Invalid input");
-                this.main();
+                    console.log("Invalid input");
+                    this.main();
             }
         })
-        .catch((err) => {
-            console.log(err);
-        });
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     clear() {
@@ -48,5 +48,9 @@ module.exports = class MenuController {
     exit() {
         console.log('Thanks for using AddressBloc!');
         process.exit();
+    }
+
+    getContactCount() {
+        return this.contacts.length;
     }
 }
