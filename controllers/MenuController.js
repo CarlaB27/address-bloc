@@ -25,12 +25,9 @@ module.exports = class MenuController {
                 case "Add new contact":
                     this.addContact();
                     break;
-<<<<<<< HEAD
-=======
                 case "Date":
                     this.getDate();
                     break;
->>>>>>> prompt-menu-a
                 case "Exit":
                     this.exit();
                 default:
