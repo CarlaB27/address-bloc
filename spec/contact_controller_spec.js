@@ -22,6 +22,7 @@ describe("#addContact()", () => {
             .then((contact) => {
                 expect(contact.name).toBe("Alice");
                 expect(contact.phone).toBe("001-101-1010");
+                expect(contact.email).toBe("alice@alice.com");
                 done();
             })
             .catch((err) => {
