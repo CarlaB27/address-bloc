@@ -10,6 +10,7 @@ module.exports = class MenuController {
                 message: "Please choose from an option below: ",
                 choices: [
                     "Add new contact",
+                    "Date",
                     "Exit"
                 ]
             }
@@ -24,6 +25,12 @@ module.exports = class MenuController {
                 case "Add new contact":
                     this.addContact();
                     break;
+<<<<<<< HEAD
+=======
+                case "Date":
+                    this.getDate();
+                    break;
+>>>>>>> prompt-menu-a
                 case "Exit":
                     this.exit();
                 default:
@@ -58,7 +65,19 @@ module.exports = class MenuController {
         process.exit();
     }
 
+<<<<<<< HEAD
     getContactCount() {
         return this.contacts.length;
     }
+=======
+    getDate() {
+        this.clear();
+        const date = new Date();
+        console.log(date);
+        this.main();
+    }
+
+
+
+>>>>>>> prompt-menu-a
 }
